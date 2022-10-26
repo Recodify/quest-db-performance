@@ -47,8 +47,6 @@ CREATE TABLE 'reading' (
 - Devices: 197478 rows
 - Readings: 444258950 rows // size on disk: 42gb
 
----
-
 ## MySql
 
 ### Environment
@@ -123,11 +121,8 @@ CREATE TABLE `reading` (
 - Devices: 197478++ rows
 - Readings: 444258950++ rows
 
----
 
 ## Queries
-
----
 
 ## Average temperature for single property `TestProperty123`, by device, by day YTD.
 
@@ -288,8 +283,6 @@ WHERE
     AND r.readingTypeId = 'environment.temperature.indoor'
     AND d.serialnumber = '000255DE'
     SAMPLE BY 1d;
-
-
 ```
 
 First run:
