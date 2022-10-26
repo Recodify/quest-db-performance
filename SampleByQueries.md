@@ -1,10 +1,10 @@
-## QuestDB
-
-### Notes
+## Notes
 
 - Queries were in order presented here, so data cached for latter ones? Mysql, yes. Quest?
 - Mysql queries run via workbench
 - QuestDb queries run via web console
+
+## QuestDB
 
 ### Environment
 
@@ -211,7 +211,7 @@ FROM
 WHERE
     readingDate BETWEEN '2022-10-01 00:00:00.000' AND '2022-10-25 04:59:59.000'
     AND r.readingTypeId = 'environment.temperature.indoor'
-    AND p.reference = 'AICO_HOMELINK_DEMO_CTO101'
+    AND p.reference = 'TestProperty123'
     SAMPLE BY 1d;
 
 ```
@@ -249,7 +249,7 @@ from
 where
   readingDate BETWEEN '2022-10-01 00:00:00.000' AND '2022-10-25 04:59:59.000'
   and readingTypeId = 'environment.temperature.indoor'
-  and property.reference = 'AICO_HOMELINK_DEMO_CTO101'
+  and property.reference = 'TestProperty123'
 group by
   device.id,
   readingYear,
