@@ -4,13 +4,22 @@
 - Mysql queries run via workbench
 - QuestDb queries run via web console
 
-## QuestDB
+## QuestDB 6.4.2
 
 ### Environment
 
 - EC2 c5.xlarge
 - Official AMI 6.4.2
 - EBS 750gb - no provisioned IOPS
+
+**NB: Single user dev server**
+
+## QuestDB 6.5.3
+
+### Environment
+
+- Same EC instance as above but running in docker
+- Putting to the same data `/var/lib/questdb/db`
 
 **NB: Single user dev server**
 
@@ -144,6 +153,8 @@ WHERE
     SAMPLE BY 1d;
 ```
 
+**6.4.2 Metal**
+
 First run:
 - 1,452 rows in 60.23s
 - Execute: 60.17s
@@ -159,6 +170,24 @@ Second run:
 - Total: 60.32s
 - Count: 19.89s
 - Compile: 0
+
+**6.4.2 Docker**
+
+(WAT?!)
+2,298 rows in 116.56s
+Execute: 116.22sNetwork: 333.17msTotal: 116.56s
+Count: 75.35sCompile: 51.34ms
+
+
+**6.5.4 Docker**
+
+(WAT?!)
+2,298  rows in 126.16s
+Execute: 126.06s
+Network: 99.6ms
+Total: 126.16s
+
+
 
 
 ### MySql
@@ -216,6 +245,8 @@ WHERE
 
 ```
 
+**6.4.2 Metal**
+
 First run:
 - 216 rows in 16.56s
 - Execute: 16.42s
@@ -233,6 +264,28 @@ Second run:
 - Count: 19.89s
 - Compile: 0
 
+**6.4.2 Docker**
+First run:
+
+216 rows in 4.39s
+Execute: 4.27sNetwork: 119.19msTotal: 4.39s
+
+Second run:
+216 rows in 4.07s
+Execute: 4.05sNetwork: 22.98msTotal: 4.07s
+
+**6.5.4 Docker**
+
+First run:
+216 rows in 4.56s
+Execute: 4.26sNetwork: 297.56msTotal: 4.56s
+
+Second run:
+216 rows in 4.26s
+Execute: 4.14sNetwork: 111.61msTotal: 4.26s
+Count: 0Compile: 0
+
+
 ### MySql
 
 ```
@@ -249,7 +302,7 @@ from
 where
   readingDate BETWEEN '2022-10-01 00:00:00.000' AND '2022-10-25 04:59:59.000'
   and readingTypeId = 'environment.temperature.indoor'
-  and property.reference = 'TestProperty123'
+  and property.reference = 'AICO_HOMELINK_DEMO_CTO101'
 group by
   device.id,
   readingYear,
@@ -285,6 +338,8 @@ WHERE
     SAMPLE BY 1d;
 ```
 
+**6.4.2 Metal**
+
 First run:
 - 16 rows in 1.81s
 - Execute: 1.55s
@@ -301,6 +356,16 @@ Second run:
 - Total: 1.59s
 - Count: 19.89s
 - Compile: 0
+
+**6.5.4 Docker**
+
+First run:
+16 rows in 1.96s
+Execute: 1.85sNetwork: 109.83msTotal: 1.96s
+
+Second run:
+16 rows in 1.71s
+Execute: 1.62sNetwork: 88.8msTotal: 1.71s
 
 ### Mysql
 
@@ -352,6 +417,8 @@ WHERE
 
 ```
 
+**6.4.2 Metal**
+
 First run:
 - 6 rows in 1.19s
 - Execute: 807.46ms
@@ -368,6 +435,15 @@ Second run:
 - Count: 19.89s
 - Compile: 0
 
+**6.5.4 Docker**
+
+First:
+16 rows in 588ms
+Execute: 507.35msNetwork: 80.65msTotal: 588ms
+
+Second:
+16 rows in 433ms
+Execute: 342msNetwork: 91msTotal: 433ms
 
 ### MySql
 
