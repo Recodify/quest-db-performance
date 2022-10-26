@@ -4,11 +4,11 @@ More detail and depth available in other files but this is as simple a demonstra
 
 Machines both had vCPU 8 / 16gb RAM
 
-**No joins YTD AVG bucketed by day: **
+**No joins YTD AVG bucketed by day**
 - Questdb 60020ms
 - MySql 121ms
 
-**No joins MTD AVG bucketed by day: **
+**No joins MTD AVG bucketed by day**
 - Questdb 250ms
 - MySql 16ms
 
