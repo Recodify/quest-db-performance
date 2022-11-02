@@ -3,6 +3,11 @@
 I have two tables that are exactly the same apart from one has a `DateTime64(3)` and the other has as a `DateTime`. When executing a query
 against both, the one with the `DateTime` is slightly slower and looks at more rows! This is counter intuitive, can anyone help me understand why?
 
+# Environment:
+
+Version: 22.10.1.1877
+Host: Docker/EC2/c5.2xlarge
+
 # Schema
 
 ```
