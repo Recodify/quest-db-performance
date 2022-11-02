@@ -23,6 +23,8 @@ Machines both had vCPU 8 / 16gb RAM
 
 ## Average temperature for single property `TestProperty123`, by device, by day YTD.
 
+ 2236416
+
 ###
 
 ```

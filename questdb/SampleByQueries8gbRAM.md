@@ -197,7 +197,7 @@ from
 where
   readingDate BETWEEN '2022-10-01 00:00:00.000' AND '2022-10-25 04:59:59.000'
   and readingTypeId = 'environment.temperature.indoor'
-  and property.reference = 'TestProperty123'
+  and property.reference = 'AICO_HOMELINK_DEMO_CTO101'
 group by
   device.id,
   readingYear,
